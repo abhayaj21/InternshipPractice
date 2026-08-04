@@ -1,0 +1,84 @@
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 12, 41, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.confirm-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.1);
+  animation: confirmPop 0.3s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+@keyframes confirmPop {
+  from { opacity: 0; transform: scale(0.88) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.confirm-icon-wrap {
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, #fff7ed, #fed7aa);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: #ea580c;
+  margin: 0 auto 18px;
+  box-shadow: 0 6px 18px rgba(234,88,12,0.2);
+}
+
+.confirm-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.confirm-sub {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-cancel, .btn-danger {
+  display: flex; align-items: center; gap: 7px;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: 'Inter', sans-serif;
+}
+.btn-cancel {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1.5px solid #e2e8f0;
+}
+.btn-cancel:hover { background: #e2e8f0; color: #1e293b; transform: translateY(-1px); }
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(239,68,68,0.35);
+}
+.btn-danger:hover { background: linear-gradient(135deg, #dc2626, #b91c1c); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(239,68,68,0.45); }

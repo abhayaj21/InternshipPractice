@@ -1,0 +1,37 @@
+<div class="dash-shell" [class.sidebar-open]="sidebarState.isOpen()">
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" *ngIf="sidebarState.isOpen()" (click)="sidebarState.close()"></div>
+
+  <app-sidebar></app-sidebar>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="topbar-left">
+        <!-- Hamburger (mobile only) -->
+        <button class="hamburger-btn" (click)="sidebarState.toggle()" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-brand">
+          <div class="topbar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div class="topbar-text">
+            <h1 class="topbar-title">EduManage</h1>
+            <p class="topbar-sub">Student Management System</p>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-badge">
+          <span class="status-dot"></span>
+          <span class="badge-label">Online</span>
+        </div>
+      </div>
+    </header>
+    <main class="dash-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

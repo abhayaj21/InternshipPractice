@@ -1,0 +1,131 @@
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1e1b4b 0%, #13113a 100%);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ── Header ── */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 20px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 6px;
+  position: relative;
+}
+.sidebar-logo {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(99,102,241,.4);
+  flex-shrink: 0;
+}
+.brand-title {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.brand-sub {
+  display: block;
+  font-size: 10.5px; color: rgba(255,255,255,.35);
+  margin-top: 2px; letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+/* Mobile close btn */
+.sidebar-close-btn {
+  display: none;
+  margin-left: auto;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  width: 32px; height: 32px;
+  align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease; flex-shrink: 0;
+}
+.sidebar-close-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* ── Section Label ── */
+.sidebar-section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.25);
+  padding: 14px 20px 5px;
+}
+
+/* ── Nav Lists ── */
+.nav-list { list-style: none; padding: 0 10px; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+.nav-bottom { padding: 0 10px; }
+.sidebar-spacer { flex: 1; }
+
+/* ── Nav Item ── */
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 13px; border-radius: 10px;
+  color: rgba(255,255,255,0.52); text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  transition: all 0.2s ease; cursor: pointer;
+}
+.nav-item:hover { background: rgba(99,102,241,0.16); color: rgba(255,255,255,0.9); text-decoration: none; }
+.nav-icon {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; background: rgba(255,255,255,0.07); flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.nav-label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-arrow { color: rgba(255,255,255,0.28); transition: transform 0.2s ease; }
+
+/* Active */
+li.nav-active > .nav-item {
+  background: linear-gradient(135deg, rgba(99,102,241,.3), rgba(79,70,229,.2));
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(99,102,241,.35);
+}
+li.nav-active .nav-icon {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(99,102,241,.4);
+}
+li.parentActive > .nav-item { background: rgba(99,102,241,.1); color: #a5b4fc; }
+li.parentActive .nav-arrow { transform: rotate(180deg); color: #a5b4fc; }
+
+/* ── Submenu ── */
+.sub-list {
+  display: none; flex-direction: column; gap: 2px;
+  list-style: none; padding: 4px 0 4px 16px; margin: 0;
+  animation: fadeInUp 0.2s ease both;
+}
+.has-sub:hover .sub-list, .sub-list.sub-open { display: flex; }
+.sub-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 13px; border-radius: 8px;
+  color: rgba(255,255,255,0.45); text-decoration: none;
+  font-size: 13.5px; font-weight: 500; transition: all 0.18s ease;
+}
+.sub-item:hover { background: rgba(99,102,241,.12); color: rgba(255,255,255,.85); text-decoration: none; }
+.sub-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.22); flex-shrink: 0; transition: all 0.18s ease; }
+li.nav-active .sub-item { color: #a5b4fc; background: rgba(99,102,241,.15); }
+li.nav-active .sub-dot { background: #6366f1; box-shadow: 0 0 6px #6366f1; }
+
+/* ── Logout ── */
+.nav-logout:hover { background: rgba(244,63,94,.15) !important; color: #fda4af !important; }
+.nav-logout:hover .nav-icon { background: rgba(244,63,94,.2); color: #f43f5e; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .sidebar-close-btn { display: flex; }
+  .sidebar { min-height: 100vh; width: 260px; }
+}
+@media (max-width: 320px) {
+  .sidebar { width: 240px; }
+}

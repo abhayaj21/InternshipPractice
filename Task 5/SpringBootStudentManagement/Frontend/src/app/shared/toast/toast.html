@@ -1,0 +1,20 @@
+<div class="toast-container">
+  <div
+    *ngFor="let t of toast.toasts()"
+    class="toast-item"
+    [class]="'toast-item toast-' + t.type"
+    [class.toast-removing]="t.removing"
+  >
+    <div class="toast-icon" [innerHTML]="getIcon(t.type)"></div>
+    <div class="toast-body">
+      <div class="toast-title">{{ t.title }}</div>
+      <div class="toast-message">{{ t.message }}</div>
+    </div>
+    <button class="toast-close" (click)="toast.remove(t.id)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="toast-progress" [class]="'toast-progress toast-prog-' + t.type"></div>
+  </div>
+</div>

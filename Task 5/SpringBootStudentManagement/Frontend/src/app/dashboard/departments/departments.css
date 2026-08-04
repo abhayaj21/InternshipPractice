@@ -1,0 +1,45 @@
+.page-wrapper { display: flex; flex-direction: column; gap: 18px; }
+.page-header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.page-header-icon { width: 46px; height: 46px; background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #059669; flex-shrink: 0; }
+.page-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; color: #0f172a; margin: 0; }
+.page-sub { font-size: 13px; color: #64748b; margin: 3px 0 0; }
+
+.dept-layout { display: grid; grid-template-columns: 280px 1fr; gap: 18px; align-items: start; }
+
+.add-dept-card { background: #fff; border-radius: 16px; padding: 22px; border: 1px solid #e2e8f0; box-shadow: 0 4px 16px rgba(0,0,0,.05); display: flex; flex-direction: column; gap: 16px; }
+.card-section-title { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 700; color: #1e293b; margin: 0; }
+.card-section-title svg { color: #059669; }
+.field-wrap { display: flex; flex-direction: column; }
+.form-label { font-size: 12px; font-weight: 700; color: #374151; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-control { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 11px 14px; font-size: 14px; color: #1e293b; background: #fafafa; transition: all 0.2s ease; }
+.form-control:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,.1); outline: none; background: #fff; }
+.form-control::placeholder { color: #94a3b8; }
+.add-btn { display: flex; align-items: center; gap: 8px; padding: 11px 18px; background: linear-gradient(135deg, #10b981, #059669); border: none; border-radius: 10px; color: #fff; font-size: 14px; font-weight: 700; box-shadow: 0 6px 18px rgba(16,185,129,.28); transition: all 0.22s ease; cursor: pointer; width: 100%; justify-content: center; }
+.add-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(16,185,129,.38); background: linear-gradient(135deg, #059669, #047857); color: #fff; }
+.add-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.table-card { background: #fff; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 16px rgba(0,0,0,.05); overflow: hidden; }
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 360px; }
+.data-table thead tr { background: linear-gradient(135deg, #f8fafc, #f1f5f9); }
+.data-table th { padding: 13px 14px; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 2px solid #e2e8f0; text-align: left; white-space: nowrap; }
+.data-table td { padding: 12px 14px; color: #334155; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+.data-row { transition: background 0.15s ease; }
+.data-row:hover { background: #f0fdf4; }
+.data-row:last-child td { border-bottom: none; }
+.row-num { font-size: 12.5px; font-weight: 600; color: #94a3b8; }
+.id-badge { font-family: 'Space Grotesk', monospace; font-size: 12px; font-weight: 700; background: #d1fae5; color: #065f46; padding: 3px 9px; border-radius: 99px; }
+.dept-name { font-weight: 600; color: #1e293b; }
+.col-actions { text-align: center; width: 88px; }
+.action-btns { display: flex; justify-content: center; gap: 7px; }
+.act-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: none; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; }
+.act-edit { background: #d1fae5; color: #065f46; }
+.act-edit:hover { background: #10b981; color: #fff; transform: scale(1.1); box-shadow: 0 4px 12px rgba(16,185,129,.3); }
+.act-delete { background: #fee2e2; color: #991b1b; }
+.act-delete:hover { background: #ef4444; color: #fff; transform: scale(1.1); box-shadow: 0 4px 12px rgba(239,68,68,.3); }
+.empty-row td, .error-row td { padding: 0; border: none; }
+.empty-state { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 36px 20px; color: #94a3b8; font-size: 13.5px; font-weight: 500; text-align: center; }
+.server-error-state { display: flex; align-items: center; gap: 10px; justify-content: center; padding: 22px; color: #dc2626; font-size: 13.5px; font-weight: 600; background: #fff1f2; }
+
+@media (max-width: 800px) { .dept-layout { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .add-dept-card { padding: 18px; } }

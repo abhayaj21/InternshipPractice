@@ -1,0 +1,83 @@
+.notfound-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  position: relative;
+  overflow: hidden;
+}
+.notfound-blob {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(99,102,241,0.35), transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: blob 10s ease-in-out infinite;
+}
+.notfound-card {
+  position: relative; z-index: 10;
+  text-align: center;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 52px 48px;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+}
+.notfound-graphic {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.code-big {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 7rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.08);
+  letter-spacing: -4px;
+  line-height: 1;
+  position: absolute;
+}
+.code-icon {
+  position: relative; z-index: 2;
+  width: 88px; height: 88px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  box-shadow: 0 12px 36px rgba(99,102,241,.5);
+  animation: float 4s ease-in-out infinite;
+  margin-top: 20px;
+}
+.notfound-card h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 16px 0 10px;
+}
+.notfound-card p {
+  color: rgba(255,255,255,0.55);
+  font-size: 14.5px;
+  margin-bottom: 28px;
+}
+.notfound-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(99,102,241,.4);
+  transition: all 0.22s ease;
+}
+.notfound-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(99,102,241,.5); color: #fff; }
